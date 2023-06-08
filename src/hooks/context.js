@@ -18,6 +18,8 @@ export const ContextStore = props => {
 		nhat: "",
 		register: "",
 	});
+	const [isModal, setIsModal] = useState(false);
+	const [newBarimt, setNewBarimt] = useState({});
 
 	var myHeaders = new Headers();
 	myHeaders.append("ebazaar_token", localStorage.getItem("ebazaar_token"));
@@ -68,7 +70,7 @@ export const ContextStore = props => {
 
 						let update = r.data.map((itm, index) => {
 							let company = "";
-							suppliers 
+							suppliers
 								? suppliers.map(supplier =>
 										itm.body
 											? itm.body.registerNo == supplier.register
@@ -88,7 +90,7 @@ export const ContextStore = props => {
 
 						setBarimts(update);
 						setFilteredBarimts(update);
-						console.log(update);
+						console.log("hi", JSON.stringify(update[0]));
 					})
 					.catch(e => {
 						console.log("error", e);
@@ -127,11 +129,14 @@ export const ContextStore = props => {
 				setIsSideBar,
 				sideBarData,
 				setSideBarData,
+				newBarimt,
+				setNewBarimt,
 				searchValues,
+				isModal,
+				setIsModal,
 				setSearchValues,
 				suppliers,
 				filteredBarimts,
-
 				allFilter,
 			}}
 		>

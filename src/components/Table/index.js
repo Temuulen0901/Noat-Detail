@@ -10,6 +10,7 @@ const Table = () => {
 		setSideBarData,
 		filteredBarimts,
 		allFilter,
+		setIsModal,
 	} = useContext(Ctx);
 
 	const handleSearch = e => {
@@ -81,6 +82,12 @@ const Table = () => {
 
 	return (
 		<div className={classes.container}>
+			<button
+				onClick={() => setIsModal(true)}
+				className={classes.Addbutton}
+			>
+				Баримт нэмэх
+			</button>
 			<table>
 				<thead>
 					<tr>

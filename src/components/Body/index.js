@@ -8,6 +8,7 @@ const Main = () => {
 	return (
 		<div className={classes.container}>
 			<Table />
+
 			<SideBar />
 		</div>
 	);
